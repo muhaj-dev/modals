@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modal</title>
+</head>
+<body>
+    <button id="myBtn" class="btn">Modal</button>
+
+    <!-- Modal  -->
+
+    <main id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close">&times;</div>
+                <h1>Modal header</h1>
+            </div>
+            <p class="modal-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore ea dolorem illo pariatur nihil tempore voluptatum excepturi modi ipsam?</p>
+        </div>
+    </main>
+
+    <script>
+        let modal = document.getElementById("myModal");
+        let btn = document.getElementById("myBtn");
+        let close = document.querySelector(".close");
+
+        btn.onclick = function() {
+           modal.style.display = "block"; 
+        }
+
+        close.onclick = function() {
+            modal.style.display = "none"
+        }
+
+        window.onclick = function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
